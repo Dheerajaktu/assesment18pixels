@@ -1,0 +1,34 @@
+API Endpoints
+
+Books:
+
+POST /books: Add a new book (fields: title, author, ISBN, publish year, genre).
+GET /books: Retrieve a list of all books (with optional filters like author, genre, or year).
+GET /books/: Get details of a specific book by ID.
+PUT /books/: Update a book's details.
+DELETE /books/: Remove a book from the system.
+
+
+Users:
+POST /users: Register a new user (fields: name, email, password).
+GET /users: List all registered users.
+GET /users/: Get user details by ID.
+PUT /users/: Update user details.
+DELETE /users/: Remove a user from the system.
+
+
+Borrowing:
+
+POST /borrow: Borrow a book (fields: userID, bookID, borrow date).
+GET /borrow: Get a list of all borrowed books, with the borrower's details.
+POST /return: Return a borrowed book (fields: userID, bookID, return date).
+
+Database
+Use a NoSQL database (MongoDB) to store books, users, and borrow details.
+
+Security
+Implement JWT-based authentication for securing API endpoints (e.g., book borrowing, updating/deleting books and users).
+Hash passwords securely using bcrypt.
+
+Performance
+Implement pagination for the GET /books and GET /users endpoints.
