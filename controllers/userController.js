@@ -1,8 +1,8 @@
 const User = require('../models/Users');
+const { generateToken } = require('../utils/jwtUtils');
 
 // Add new User
 exports.addNewUser = async (req, res) => {
-    console.log('--called addNewUser----', req.body);
     try {
         const user = new User(req.body);
         await user.save();
@@ -19,7 +19,7 @@ exports.getAllUsers = async (req, res) => {
     if (author) query.author = author;
     if (genre) query.genre = genre;
     if (year) query.publishYear = year;
-    
+
     const users = await User.find(query).skip(req.query.skip).limit(req.query.limit);
     res.json(users);
 };

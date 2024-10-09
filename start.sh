@@ -1,1 +1,2 @@
-nodemon app.js
+EXPORT PORT=3000
+npm start
